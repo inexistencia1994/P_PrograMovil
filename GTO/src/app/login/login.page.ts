@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+<<<<<<< HEAD
+=======
 import { AlertController, LoadingController } from '@ionic/angular';
+>>>>>>> 43090112c078c96f4dad8a63625826732bf2a630
 
 @Component({
   selector: 'app-login',
@@ -11,13 +14,41 @@ export class LoginPage {
   username: string = '';
   password: string = '';
 
+<<<<<<< HEAD
+  constructor(private router: Router) { }
+
+  
+  ingresar() {
+=======
   constructor(private router: Router, private alertController: AlertController, private loadingController: LoadingController) { } // Agrega LoadingController aquí
 
   async ingresar() {
+>>>>>>> 43090112c078c96f4dad8a63625826732bf2a630
     console.log('Iniciar sesión presionado');
     console.log('Username:', this.username);
     console.log('Password:', this.password);
 
+<<<<<<< HEAD
+    const isAuthenticated = this.authenticateUser(this.username, this.password);
+
+    if (isAuthenticated) {
+
+      this.router.navigate(['/home']);
+    } else {
+
+      console.log('Credenciales incorrectas');
+      alert('Usuario o contraseña incorrectos.');
+    }
+  }
+
+
+  authenticateUser(username: string, password: string): boolean {
+
+    if (username === 'usuario@correo.com' && password === '12345') {
+      return true;
+    }
+    return false;
+=======
     const loading = await this.loadingController.create({
       message: 'Cargando...',
       duration: 2000 // Duración del spinner
@@ -61,5 +92,6 @@ export class LoginPage {
     setTimeout(() => {
       alert.dismiss(); // Cierra la alerta después de 2 segundos
     }, 3000);
+>>>>>>> 43090112c078c96f4dad8a63625826732bf2a630
   }
 }
